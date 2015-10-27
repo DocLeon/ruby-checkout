@@ -7,5 +7,11 @@ describe Checkout do
       price = checkout.scan ''
       price.should == 0
     end
+
+    it 'returns 50 when scanning 1 A' do
+      checkout = Checkout.new
+      price = checkout.scan 'A'
+      price.should == 50
+    end
   end
 end
