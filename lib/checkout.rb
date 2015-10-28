@@ -1,3 +1,9 @@
+require_relative 'checkout/item_a'
+require_relative 'checkout/item_b'
+require_relative 'checkout/item_c'
+require_relative 'checkout/item_d'
+require_relative 'checkout/no_item'
+
 class Checkout
   def scan items
     catalogue = {
@@ -8,35 +14,5 @@ class Checkout
       'D' => ItemD.new
     }
     return catalogue[items].price
-  end
-end
-
-class NoItem
-  def price
-    0
-  end
-end
-
-class ItemA
-  def price
-    50
-  end
-end
-
-class ItemB
-  def price
-    30
-  end
-end
-
-class ItemC
-  def price
-    20
-  end
-end
-
-class ItemD
-  def price
-    15
   end
 end
