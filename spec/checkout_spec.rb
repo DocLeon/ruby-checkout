@@ -33,5 +33,12 @@ describe Checkout do
         expect(price).to eq(20)
       end
     end
+
+    context '1 D in basket' do
+      let(:price) {checkout.scan 'D'}
+      it 'returns 15' do
+        expect(price).to eq(15)
+      end
+    end
   end
 end
