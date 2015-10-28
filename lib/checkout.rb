@@ -1,9 +1,42 @@
 class Checkout
   def scan items
-    return 50 if items == 'A'
-    return 30 if items == 'B'
-    return 20 if items == 'C'
-    return 15 if items == 'D'
+    catalogue = {
+      '' => NoItem.new,
+      'A' => ItemA.new,
+      'B' => ItemB.new,
+      'C' => ItemC.new,
+      'D' => ItemD.new
+    }
+    return catalogue[items].price
+  end
+end
+
+class NoItem
+  def price
     0
+  end
+end
+
+class ItemA
+  def price
+    50
+  end
+end
+
+class ItemB
+  def price
+    30
+  end
+end
+
+class ItemC
+  def price
+    20
+  end
+end
+
+class ItemD
+  def price
+    15
   end
 end
