@@ -1,3 +1,3 @@
-$:.push File.expand_path("../lib",__FILE__)
+#rspec adds ./lib to $LOAD_PATH
 
 require "checkout"
