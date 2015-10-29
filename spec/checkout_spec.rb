@@ -17,7 +17,6 @@ describe Checkout do
     context '1 item scanned' do
       it 'gets the price of the item scanned' do
           {'A' => 50, 'B' => 30, 'C' => 20, 'D' => 15 }.each do |basket, total_price|
-            price = checkout.scan basket
             expect(checkout.scan basket).to eq(total_price)
           end
       end
