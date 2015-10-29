@@ -4,6 +4,7 @@ describe Checkout do
 
   subject(:checkout) {Checkout.new}
 
+
   describe '#scan' do
 
     context 'no items in basket' do
@@ -13,32 +14,14 @@ describe Checkout do
       end
     end
 
-    context '1 A in basket' do
-      let(:price) {checkout.scan 'A'}
-      it 'returns 50' do
-        expect(price).to eq(50)
+    context '1 item scanned' do
+      it 'gets the price of the item scanned' do
+          {'A' => 50, 'B' => 30, 'C' => 20, 'D' => 15 }.each do |basket, total_price|
+            price = checkout.scan basket
+            expect(checkout.scan basket).to eq(total_price)
+          end
       end
     end
 
-    context '1 B in basket' do
-      let(:price) {checkout.scan 'B'}
-      it 'returns 30' do
-        expect(price).to eq(30)
-      end
-    end
-
-    context '1 C in basket' do
-      let(:price) {checkout.scan 'C'}
-      it 'returns 20'do
-        expect(price).to eq(20)
-      end
-    end
-
-    context '1 D in basket' do
-      let(:price) {checkout.scan 'D'}
-      it 'returns 15' do
-        expect(price).to eq(15)
-      end
-    end
   end
 end
