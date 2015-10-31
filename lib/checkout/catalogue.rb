@@ -16,6 +16,6 @@ class Catalogue
   end
 
   def [] sku
-    @catalogue[sku]
+    @catalogue.fetch(sku)
   end
 end
