@@ -22,5 +22,13 @@ describe Checkout do
       end
     end
 
+    context 'multiple items scanned' do
+      it 'gets the total price of all items scanned' do
+        {'AA' => 100, 'ABC' => 100}.each do |basket, total_price|
+          expect(checkout.scan basket).to eq(total_price)
+        end
+      end
+    end
+
   end
 end

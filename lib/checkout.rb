@@ -6,6 +6,8 @@ class Checkout
   end
 
   def scan items
-    return @catalogue[items].price
+    price = 0
+    items.each_char {|item| price += @catalogue[item].price}
+    price
   end
 end
