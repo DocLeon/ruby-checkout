@@ -30,5 +30,11 @@ describe Checkout do
       end
     end
 
+    context 'item not in catalogue scanned' do
+      it 'raises an error' do
+        expect {checkout.scan 'X'}.to raise_error(KeyError)
+      end
+    end
+
   end
 end
