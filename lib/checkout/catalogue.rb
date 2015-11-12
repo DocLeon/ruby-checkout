@@ -11,11 +11,11 @@ class Catalogue
       'A' => ItemA.new,
       'B' => ItemB.new,
       'C' => ItemC.new,
-      'D' => ItemD.new,
+      'D' => ItemD.new
     }
   end
 
-  def [] sku
+  def [](sku)
     @catalogue.fetch(sku)
   end
 end

@@ -4,9 +4,9 @@ guard :rspec, cmd: 'rspec' do
     "spec/#{m[1]}_spec.rb"
   end
 
-# watch /spec/ files
+  # watch /spec/ files
   watch(%r{^spec/(.+).rb$}) do |m|
     "spec/#{m[1]}.rb"
   end
-  watch('spec/spec_helper.rb')  { "spec" }
+  watch('spec/spec_helper.rb') { 'spec' }
 end
