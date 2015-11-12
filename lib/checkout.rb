@@ -2,12 +2,12 @@ require_relative 'checkout/catalogue'
 
 class Checkout
   def initialize (catalogue = Catalogue.new)
-    @catalogue = Catalogue.new
+    @catalogue = catalogue
   end
 
   def scan items
-    price = 0
-    items.each_char {|item| price += @catalogue[item].price}
-    price
+    items.split('').reduce(0) do
+      |price,item| price + @catalogue[item].price
+    end
   end
 end

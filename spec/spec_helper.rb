@@ -1,3 +1,3 @@
-#rspec adds ./lib to $LOAD_PATH
+# rspec adds ./lib to $LOAD_PATH
 
-require "checkout"
+require 'checkout'
