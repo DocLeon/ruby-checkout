@@ -5,10 +5,10 @@ class Catalogue
   def initialize
     @catalogue = {
       '' => NoItem.new,
-      'A' => Item.new(50),
-      'B' => Item.new(30),
-      'C' => Item.new(20),
-      'D' => Item.new(15)
+      'A' => Item.with_price_of(50),
+      'B' => Item.with_price_of(30),
+      'C' => Item.with_price_of(20),
+      'D' => Item.with_price_of(15)
     }
   end
 
